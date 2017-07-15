@@ -37,8 +37,8 @@ function spacesToUnderScore( phrase ) {
   return phrase.split(' ').join('_');
 }
 
-function underScoresToSpaces( keys ) {
-  return keys.map( key => key.split('_').join(' ') );
+function underScoresToSpaces( key ) {
+  return key.split('_').join(' ');
 }
 
 function assessPhrase( phrase, consoleStats ) {
@@ -53,7 +53,27 @@ function assessPhrase( phrase, consoleStats ) {
   return underScoresToSpaces(keys);
 }
 
+function assessPhrase2( phrases, consoleStats ) {
+  let foundPhrases = [];
+
+  phrases.forEach( (phrase) => {
+
+    const key = spacesToUnderScore(phrase);
+    // console.log(obj);
+    // console.log(key, obj[key]);
+    if ( (obj[key] !== undefined) && (obj[key] >= 0 ) ) {
+      // console.log('ela')
+      foundPhrases.push( underScoresToSpaces( key ));
+      // increaseCounterForKeys( key );
+    }
+  });
+  
+  
+  return foundPhrases;
+}
+
 module.exports = {
   prepareData,
-  assessPhrase
+  assessPhrase,
+  assessPhrase2
 }
