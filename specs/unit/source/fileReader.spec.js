@@ -1,4 +1,6 @@
 const should = require('should');
+const os = require('os');
+
 const fileReader = require('../../../source/fileReader');
 
 describe('fileReader.js', () => {
@@ -10,6 +12,9 @@ describe('fileReader.js', () => {
 
     it('should return the contents of the file if they exist', () => {
         const data = fileReader.readFile('./specs/unit/helpers/data-phrases');
-        data.should.equal('hypertensive disorder');
+        const expectedResult = 'hypertensive disorder'+os.EOL+
+                                'acid reflux'+os.EOL+
+                                'gastritus'
+        data.should.equal(expectedResult);
     });
 })
