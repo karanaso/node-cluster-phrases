@@ -4,7 +4,10 @@
   "description": "# The task",
   "main": "server.js",
   "scripts": {
-    "test-unit-w": "node_modules/mocha/bin/mocha -w specs/**/*.js",
+    "test": "npm run test-unit && npm run test-features",
+    "test-features": "node_modules/cucumber/bin/cucumber.js specs/features/",
+    "test-unit": "node_modules/mocha/bin/mocha specs/unit/**/*.js",
+    "test-unit-w": "node_modules/mocha/bin/mocha -w specs/unit/**/*.js",
     "start": "node server.js"
   },
   "repository": {
@@ -19,8 +22,13 @@
   "homepage": "https://github.com/YourMD/data#readme",
   "keywords": [],
   "dependencies": {
+    "cucumber": "^2.3.1",
     "mocha": "^3.4.2",
+    "remove-punctuation": "0.0.4",
     "rewire": "^2.5.2",
     "should": "^11.2.1"
+  },
+  "devDependencies": {
+    "request": "^2.81.0"
   }
 }

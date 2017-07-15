@@ -56,11 +56,6 @@ describe('phrasesAssessor.js', () => {
       Object.keys(obj).should.have.length(1);
     });
 
-    it('the key should be in lowerCase', () => {
-      transformToObj(['A B C']);
-      obj['a_b_c'].should.exist;
-    });
-
     it('should replace spaces with underscore', () => {
       transformToObj(['a b c']);
       obj['a_b_c'].should.exist;

@@ -13,7 +13,7 @@ function textDataToArray(textData) {
 function transformToObj(data) {
   //you can choose to clean or add data to obj here
   data.forEach(item => {
-    const obj2String = item.replace(/ /g, '_').toLowerCase();
+    const obj2String = item.replace(/ /g, '_');
     obj[obj2String] = 0;
   });
   
@@ -34,7 +34,7 @@ function getCountersForKeys( keys ) {
 }
 
 function spacesToUnderScore( phrase ) {
-  return phrase.split(' ').join('_').toLowerCase();
+  return phrase.split(' ').join('_');
 }
 
 function underScoresToSpaces( keys ) {
@@ -43,7 +43,7 @@ function underScoresToSpaces( keys ) {
 
 function assessPhrase( phrase, consoleStats ) {
   const phraseWithUnderScore = spacesToUnderScore(phrase);
-  const keys = arrayOfKeys.filter( (key) => phraseWithUnderScore.includes(key) );
+  const keys = arrayOfKeys.filter( (key) => (key!=='') && (phraseWithUnderScore.includes(key)) );
   
   if (consoleStats) {
     increaseCounterForKeys(keys);
