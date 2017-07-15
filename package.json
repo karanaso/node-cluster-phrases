@@ -1,0 +1,25 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "# The task",
+  "main": "server.js",
+  "scripts": {
+    "test-unit-w": "node_modules/mocha/bin/mocha -w specs/**/*.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YourMD/data.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YourMD/data/issues"
+  },
+  "homepage": "https://github.com/YourMD/data#readme",
+  "keywords": [],
+  "dependencies": {
+    "mocha": "^3.4.2",
+    "should": "^11.2.1"
+  }
+}
